@@ -1,0 +1,21 @@
+4 6 9
+DEFAULT
+A
+ A
+  A
+Q   Q
+ Q Q
+  Q
+    D
+   D
+DDD
+CC
+B
+ B
+P
+ P
+P
+R
+ T
+T
+Z

@@ -1,0 +1,28 @@
+6 10 12
+DEFAULT
+JJJ
+JJJJ
+J
+QQ
+ QQ
+S
+ TTT
+TTT
+OOO
+  O
+PPPP
+ PPP
+PP
+M
+M
+MMMM
+   MM
+NN
+AAA
+A
+KK
+K
+KKK
+LL
+LLLLL
+U
