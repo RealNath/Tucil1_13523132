@@ -226,7 +226,6 @@ public class Main {
     static void solveMain(String fileName) {
         Scanner sc = new Scanner(System.in);
         try {
-            // Membaca seluruh baris dari file
             List<String> allLines = Files.readAllLines(Paths.get(fileName));
             if (allLines.size()<2) {
                 System.out.println("File tidak valid.");
@@ -234,7 +233,7 @@ public class Main {
                 return;
             }
 
-            // Baris pertama: N M P
+            // tiga angka di baris 1
             String[] parts = allLines.get(0).trim().split("\\s+");
             if (parts.length < 3) {
                 System.out.println("Baris pertama harus berisi tiga angka: N M P");
@@ -287,7 +286,7 @@ public class Main {
                 remainingLines.add(line);
             }
 
-            // Pengelompokan baris untuk tiap piece.
+            // cek tiap baris dan kelompokkan sesuai huruf
             int idx = 0;
             for (int i=0; i<P; i++) {
                 if (idx >= remainingLines.size()) break;
