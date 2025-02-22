@@ -354,7 +354,7 @@ public class Main {
                     saveSolution(outFileName, finalBoard/*, searchTime, iterCount*/);
                     System.out.println("Solusi berhasil disimpan ke " + outFileName);
                 }
-            } while (!answer.equals("n"));
+            } while ((!answer.equals("n"))&&(!answer.equals("y")));
             
             String answerImg;
             do {
@@ -365,7 +365,7 @@ public class Main {
                     String outFileName = "../test/"+sc.nextLine().trim()+".jpg";
                     ImageSaver.saveAsImage(outFileName, finalBoard, 100);
                 }
-            } while (!answerImg.equals("n"));
+            } while ((!answerImg.equals("n"))&&(!answerImg.equals("y")));
             sc.close();
 
         } catch (FileNotFoundException e) {
