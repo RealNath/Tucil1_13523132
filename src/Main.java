@@ -379,7 +379,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Masukkan nama file teks (tanpa \".txt\"): ");
-        String fileName = "../src/"+sc.nextLine().trim()+".txt";
+        String fileName = "../test/"+sc.nextLine().trim()+".txt";
         solveMain(fileName);
         sc.close();
     }
