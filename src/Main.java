@@ -36,12 +36,12 @@ public class Main {
                     if (line.charAt(j)==letter) baseShape.add(new int[]{i,j});
                 }
             }
-            normalize(baseShape);
+            acuanTopLeft(baseShape);
             orientations = generateOrientations(baseShape);
         }
 
         // Buat titik paling kiri atas = (0,0)
-        private void normalize(List<int[]> shape) {
+        private void acuanTopLeft(List<int[]> shape) {
             int minRow = Integer.MAX_VALUE;
             int minCol = Integer.MAX_VALUE;
             for (int[] p : shape) {
@@ -60,7 +60,7 @@ public class Main {
             List<List<int[]>> result = new ArrayList<>();
             for (int r = 0; r < 4; r++) {
                 List<int[]> rotated = rotate(base, r);
-                normalize(rotated);
+                acuanTopLeft(rotated);
                 String key = coordString(rotated);
                 if (!unique.contains(key)) {
                     unique.add(key);
@@ -68,7 +68,7 @@ public class Main {
                 }
                 // Tambahkan orientasi mirror (horizontal)
                 List<int[]> mirrored = mirror(rotated);
-                normalize(mirrored);
+                acuanTopLeft(mirrored);
                 key = coordString(mirrored);
                 if (!unique.contains(key)) {
                     unique.add(key);
@@ -87,7 +87,7 @@ public class Main {
                     p[0] = p[1];
                     p[1] = -temp;
                 }
-                normalize(newShape);
+                acuanTopLeft(newShape);
             }
             return newShape;
         }
@@ -379,7 +379,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Masukkan nama file teks (tanpa \".txt\"): ");
-        String fileName = "../test/"+sc.nextLine().trim()+".txt";
+        String fileName = "../src/"+sc.nextLine().trim()+".txt";
         solveMain(fileName);
         sc.close();
     }
