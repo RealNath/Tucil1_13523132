@@ -4,14 +4,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
 
@@ -42,8 +35,8 @@ public class Main {
 
         // Buat titik paling kiri atas = (0,0)
         private void acuanTopLeft(List<int[]> shape) {
-            int minRow = Integer.MAX_VALUE;
-            int minCol = Integer.MAX_VALUE;
+            int minRow = 999999999;
+            int minCol = 999999999;
             for (int[] p : shape) {
                 if (p[0]<minRow) minRow = p[0];
                 if (p[1]<minCol) minCol = p[1];
@@ -379,7 +372,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Masukkan nama file teks (tanpa \".txt\"): ");
-        String fileName = "../src/"+sc.nextLine().trim()+".txt";
+        String fileName = "../test/"+sc.nextLine().trim()+".txt";
         solveMain(fileName);
         sc.close();
     }
