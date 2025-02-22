@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -345,22 +344,28 @@ public class Main {
                 System.out.println("Banyak kasus yang ditinjau: " + iterCount);
             } else System.out.println("Solusi tidak ditemukan.");
 
-            System.out.print("\nApakah anda ingin menyimpan solusi? (Y/n): ");
-            String answer = sc.nextLine().trim().toLowerCase();
-            if (answer.equals("y")) {
-                System.out.print("Masukkan nama file teks output (tanpa \".txt\"): ");
-                String outFileName = "../test/"+sc.nextLine().trim()+".txt";
-                saveSolution(outFileName, finalBoard/*, searchTime, iterCount*/);
-                System.out.println("Solusi berhasil disimpan ke " + outFileName);
-            }
-
-            System.out.print("\nApakah anda ingin menyimpan solusi sebagai gambar? (Y/n): ");
-            String answerImg = sc.nextLine().trim().toLowerCase();
-            if (answerImg.equals("y")) {
-                System.out.print("Masukkan nama file gambar output (tanpa \".jpg\"): ");
-                String outFileName = "../test/"+sc.nextLine().trim()+".jpg";
-                ImageSaver.saveAsImage(outFileName, finalBoard, 100);
-            }
+            String answer;
+            do {
+                System.out.print("\nApakah anda ingin menyimpan solusi? (Y/n): ");
+                answer = sc.nextLine().trim().toLowerCase();
+                if (answer.equals("y")) {
+                    System.out.print("Masukkan nama file teks output (tanpa \".txt\"): ");
+                    String outFileName = "../test/"+sc.nextLine().trim()+".txt";
+                    saveSolution(outFileName, finalBoard/*, searchTime, iterCount*/);
+                    System.out.println("Solusi berhasil disimpan ke " + outFileName);
+                }
+            } while (!answer.equals("n"));
+            
+            String answerImg;
+            do {
+                System.out.print("\nApakah anda ingin menyimpan solusi sebagai gambar? (Y/n): ");
+                answerImg = sc.nextLine().trim().toLowerCase();
+                if (answerImg.equals("y")) {
+                    System.out.print("Masukkan nama file gambar output (tanpa \".jpg\"): ");
+                    String outFileName = "../test/"+sc.nextLine().trim()+".jpg";
+                    ImageSaver.saveAsImage(outFileName, finalBoard, 100);
+                }
+            } while (!answerImg.equals("n"));
             sc.close();
 
         } catch (FileNotFoundException e) {
@@ -370,7 +375,7 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    };
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Masukkan nama file teks (tanpa \".txt\"): ");
