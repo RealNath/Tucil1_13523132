@@ -23,7 +23,7 @@ Permainan dimulai dengan papan kosong. Pemain dapat meletakkan *piece* sedemikia
 Puzzle dinyatakan selesai jika dan hanya jika papan terisi penuh dan seluruh *piece* berhasil diletakkan tanpa tumpang tindih.
 
 ## Cara Kerja
-1. Program membaca file teks yang diberikan oleh pengguna, yaitu jumlah baris, jumlah kolom, banyaknya piece, mode atau config, dan bentuk piece.
+1. Program membaca file teks yang diberikan oleh pengguna (terletak di folder [test](test)), yaitu jumlah baris, jumlah kolom, banyaknya piece, mode atau config, dan bentuk piece.
     * Jika config yang dipakai adalah custom, maka program membaca bentuk papan (board) juga.
 2. Piece yang dibaca disimpan sebagai kumpulan koordinat.
 3. Semua piece dirotasikan dan dicerminkan, tiap hasil orientasi tersebut disimpan sebagai kumpulan koordinat dan akan digunakan nanti.
