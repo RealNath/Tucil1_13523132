@@ -11,7 +11,7 @@
     6. [*Library* yang Digunakan](#library-yang-digunakan)
 
 ## IQ Puzzler Pro Solver 
-Dibuat oleh Jonathan Levi (13523132)
+Dibuat oleh Jonathan Levi (13523132) sebagai tugas untuk Strategi Algoritma (Institut Teknologi Bandung).
 
 Program ini dibuat dengan tujuan untuk mendapatkan solusi dari permainan IQ Puzzler Pro.
 
